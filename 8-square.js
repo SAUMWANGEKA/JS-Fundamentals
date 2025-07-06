@@ -1,11 +1,30 @@
-const arg = parseInt(process.argv[2]);
+const size = parseInt(process.argv[2]);
 
-if (isNaN(arg) || arg < 0) {
-  console.log('Missing number of occurrences');
+if (isNaN(size)) {
+  console.log('Missing size');
 } else {
-  let i = 0;
-  while (i < arg) {
-    console.log('C is fun');
-    i++;
+  for (let i = 0; i < size; i++) {
+    console.log('X'.repeat(size));
   }
 }
+
+node 8-square.js
+# Missing size
+
+node 8-square.js School
+# Missing size
+
+node 8-square.js 2
+# XX
+# XX
+
+node 8-square.js 6
+# XXXXXX
+# XXXXXX
+# XXXXXX
+# XXXXXX
+# XXXXXX
+# XXXXXX
+
+node 8-square.js -3
+# (prints nothing — accepted)
